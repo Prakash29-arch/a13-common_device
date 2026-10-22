@@ -1,0 +1,15 @@
+/*
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+cc_library_shared {
+    name: "libshim_camera",
+    srcs: ["GraphicBufferMapper.cpp"],
+    shared_libs: [
+        "libsync",
+        "libui",
+        "libutils",
+    ],
+    vendor: true,
+}

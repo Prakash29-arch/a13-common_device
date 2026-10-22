@@ -1,0 +1,12 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libshim_idiv0",
+    srcs: [
+        "idiv0.cpp",
+    ],
+    vendor: true,
+}

@@ -1,0 +1,11 @@
+allow hal_fingerprint_default efs_file:dir search;
+allow hal_fingerprint_default self:netlink_socket { bind create write };
+
+r_dir_file(hal_fingerprint_default, sec_efs_file);
+
+allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_default self:netlink_socket read;
+
+# libbauthserver.so builds a directory tree below /data/vendor/biometrics
+# (bk, fp/User_%d, meta, ta/bta, ta/dta); the shared policy only allows creating files there
+allow hal_fingerprint_default biometrics_vendor_data_file:dir create_dir_perms;
